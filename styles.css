@@ -1,3 +1,22 @@
+body {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 500;
+}
+
 canvas {
+  display: block;
 	border: solid 1px black;
+  margin: auto;
+}
+
+#canvas-container {
+  position: relative;
+}
+
+#overlay-container {
+  position: absolute;
+  left: 0;
+  top: 350px;
+  font-size: 30px;
+  margin: auto;
 }
