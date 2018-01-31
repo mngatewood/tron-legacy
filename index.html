@@ -7,13 +7,56 @@
   <link href="https://fonts.googleapis.com/css?family=Orbitron:400,500" rel="stylesheet">
 </head>
 <body>
+  <div id="player1">
+  </div>
+  <div id="player2">
+  </div>
+  <img id="left-banner" src="images/tron-back-left.jpg">
+  <img id="right-banner" src="images/tron-back-right.jpg">
+  <div id="top-logo">
+    <img id="tron-logo" src="images/tron-logo.jpg">
+  </div>
   <div id="canvas-container">
     <canvas id="game" width="700" height="700"></canvas>
-    <audio id="soundtrack" autoplay loop>
-      <source src="end-of-line.mp3" type="audio/mpeg"></source>
-    </audio>
+      <audio id="soundtrack" autoplay loop>
+        <source src="end-of-line.mp3" type="audio/mpeg"></source>
+      </audio>
     <div id="overlay-container">
-      <p id="game-text">Press Spacebar to Enter the Grid</p>
+        <p class="game-text">OBJECTIVE:
+          <br>
+          Force the enemy light cycle into walls and jet trails while avoiding collision of your own light cycle.<br><br>Press spacebar to pause the battle.<br>
+        </p>
+        <table class="game-text" id="controls">
+          <tr>
+            <td class="heading" colspan="3">CONTROLS:</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="underscore">Player 1 (red):</td>
+            <td class="underscore">Player 2 (blue):</td>
+          </tr>
+          <tr>
+            <td class="align-left">Up:</td>
+            <td>'W' key</td>
+            <td><i class="arrow up"></i>&ensp; arrow key</td>
+          </tr>
+          <tr>
+            <td class="align-left">Right:</td>
+            <td>'D' key</td>
+            <td><i class="arrow right"></i>&ensp; arrow key</td>
+          </tr>
+          <tr>
+            <td class="align-left">Down:</td>
+            <td>'S' key</td>
+            <td><i class="arrow down"></i>&ensp; arrow key</td>
+          </tr>
+          <tr>
+            <td class="align-left">Left:</td>
+            <td>'A' key</td>
+            <td><i class="arrow left"></i>&ensp; arrow key</td>
+          </tr>
+        </table>
+        <p class="game-text fade"><br><br>Press Spacebar to Enter the Grid</p>
     </div>
   </div>
   <script src="main.bundle.js"></script>

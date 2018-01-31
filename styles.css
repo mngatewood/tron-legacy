@@ -1,27 +1,125 @@
+body {
+  background-color: black;
+  overflow: hidden;
+  font-family: 'Orbitron', sans-serif;
+}
+
 canvas {
   display: block;
-	border: solid 1px black;
+  border: solid 1px black;
+  margin: auto;
+}
+
+#player1 {
+  font-size: 50px;
+  color: rgb(255, 210, 100);
+  float: left;
+}
+
+#left-banner {
+  position: absolute;
+  top: 113px;
+  right: 50vw;
+  margin-right: 350px;
+  height: 700px;
+
+}
+
+#top-logo {
+  width: 100%;
+  text-align: center;
+}
+
+#right-banner {
+  position: absolute;
+  top: 113px;
+  left: 50vw;
+  margin-left: 350px;
+  height: 700px;
+}
+
+#top-logo img {
+  width: 720px;
+  height: 100px;
   margin: auto;
 }
 
 #canvas-container {
   position: relative;
   box-sizing: border-box;
-  width: 80%;
+  width: 700px;
   margin: auto;
 }
 
 #overlay-container {
   position: absolute;
-  top: 300px;
-  width: 100%;
+  top: 0;
+  width: 90%;
+  height: 100%
   margin: auto;
+  padding: 35px;
+  line-height: 35px;
 }
 
-#game-text {
-  font-family: 'Orbitron', sans-serif;
+.game-text {
   font-weight: 500;
   font-size: 30px;
   color: #FFFFFF;
   text-align: center;
+}
+
+table td {
+  text-align: center;
+  padding: 0 24px;
+  font-size: 25px;
+}
+
+.underscore {
+  text-decoration: underline;
+}
+
+.heading {
+  font-size: 30px;
+}
+
+i {
+    border: solid #FFFFFF;
+    border-width: 0 7px 7px 0;
+    display: inline-block;
+    padding: 7px;
+    margin: 0 3px;
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.fade {
+  -webkit-animation: fadeinout 4s linear forwards;
+  animation: fadeinout 4s linear 999 forwards;
+  opacity: 0;
+}
+
+@-webkit-keyframes fadeinout {
+  50% { opacity: 1; }
+}
+
+@keyframes fadeinout {
+  50% { opacity: 1; }
 }
