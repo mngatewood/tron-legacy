@@ -6,9 +6,11 @@ const Trail = require('../lib/Trail.js');
 describe('Game',() => {
 
 	it('should instantiate two Players', () => {
+		let game = new Game();
 		let cycle1 = new Cycle(0, 345, 10, 10, 0, 'red');
 		let cycle2 = new Cycle(690, 345, 10, 10, 180, 'blue');
-		assert.isObject(cycle1, cycle2);
+		assert.deepEqual(game.cycle1, cycle1);
+		assert.deepEqual(game.cycle2, cycle2);
 	});
 
 	it('should prepare player\'s lightcycles and trails', () => {
