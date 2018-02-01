@@ -3,7 +3,7 @@ var Cycle = require('../lib/Cycle');
 
 describe('Cycle', function () {
 
-  it('should instantiate a cycle', function () {
+  it('should ignstantiate a cycle', function () {
     var cycle = new Cycle();
     assert.isObject(cycle);
   });
