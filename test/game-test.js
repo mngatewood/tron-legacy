@@ -36,7 +36,7 @@ describe('Game',() => {
 		let game = new Game();
 		let cycle1 = new Cycle(0, 345, 10, 10, 0, 'red');
 		let cycle2 = new Cycle(690, 345, 10, 10, 180, 'blue');
-		game.makeCycles(cycle1, cycle2);
+		game.makeCycles();
 		assert.equal(game.cycles.length, 2);
 		assert.deepEqual(game.cycles[0], cycle1);
 		assert.deepEqual(game.cycles[1], cycle2); 
@@ -44,12 +44,31 @@ describe('Game',() => {
 
 	it('should leave light trails behind during the race', () => {
 		let game = new Game();
-		let trail = new Trail(20, 20);
-		let 
-		game.buildTrail(cycle.x, trail.y, trail.w, trail.h, trail.direction);
-		assert.equal(trail.x, trail.x - trail.w);
-
+		// let trail = new Trail(20, 20, 10, 10, 270);
+		game.buildTrail(100, 100, 10, 10, 0);
+		assert.equal(trail.x, 90);
+		game.buildTrail(100, 100, 10, 10, 90);
+		assert.equal(trail.y, 90);
+		game.buildTrail(100, 100, 10, 10, 180);
+		assert.equal(trail.x, 110);
+		game.buildTrail(100, 100, 10, 10, 270);
+		assert.equal(trail.y, 110);
+		assert.deepEqual(this.trails.length, 1);
 	});
 
+		it('should clear all texts once game starts', () => {
+			let game = new Game();
+			game.gameText;
+			game.startGame();
+			assert.equal(game.gameText[0].innerText, '');
+			assert.equal(game.gameText[1].innerText, '');
+			assert.equal(game.gameText[2].innerText, '');
+		});	
 
+		it('should display winner of the round', () => {
+			let game = new Game();
+			game.end();
+			assert.equal('game.color', red);
+			assert.equal('game.roundWinner', 2);
+		});
 });
